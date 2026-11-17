@@ -130,3 +130,4 @@ Every runner's expected exit code is recorded there, and
 `ToolRunner --run` exits **2** if any tool produces a result the dataset
 does not already record - a new finding, as distinct from a measurement.
 
+<!-- dummy PR 2026-11-17 12:48:52 -->
