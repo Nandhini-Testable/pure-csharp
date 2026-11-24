@@ -15,13 +15,19 @@ execution is not part of the build, and evaluation happens later.
 | Package manager | Central Package Management |
 | Architecture | Microservices |
 
-Projects:
+Projects (3 `.csproj` in total, so a platform run restores, builds and scans three projects):
 
-- `OrderKit.Domain` (`src/OrderKit.Domain`)
-- `OrderKit.Contracts` (`src/OrderKit.Contracts`)
-- `OrderKit.Pricing` (`src/Services/OrderKit.Pricing`)
-- `OrderKit.Risk` (`src/Services/OrderKit.Risk`)
-- `OrderKit.Reporting` (`src/Services/OrderKit.Reporting`)
+- `OrderKit.Core` (`src/OrderKit.Core.csproj`) - the former Domain, Contracts and
+  Analysis projects. Folders `src/OrderKit.Domain`, `src/OrderKit.Contracts` and
+  `src/OrderKit.Analysis` are unchanged.
+- `OrderKit.Services` (`src/Services/OrderKit.Services.csproj`) - the former
+  Pricing, Risk and Reporting projects. Folders `src/Services/OrderKit.Pricing`,
+  `.Risk` and `.Reporting` are unchanged. References `OrderKit.Core`.
+- `OrderKit.Tests` (`tests/OrderKit.Tests`) - the single test project.
+
+Namespaces and every `.cs` file are unchanged. Where two old projects each had a
+`Properties/AssemblyInfo.cs`, the extra one stays on disk and is excluded from
+compilation with `Compile Remove` (otherwise CS0579).
 
 ## Target framework
 
@@ -118,17 +124,23 @@ whole roster against it.
 
 ## Tool entry points
 
-The harness is the C# console project `ToolRunner/` (one runner per tool under
-`ToolRunner/Tools/`). It is kept out of `OrderKit.sln` and out of the tool data
-folder, so it is neither built with the corpus nor detected as part of it.
+The harness is a C# console project, `ToolRunner/`, that lives in its **own
+repository** (`pure-csharp-toolrunner`), not in this one. That keeps its `.csproj`
+out of the platform's scan of this repo, so this repo has 3 projects, not 4.
+It runs against this checkout through `REPO_ROOT`:
 
 ```text
-dotnet run --project ToolRunner                     # banner
+git clone <this repo> corpus && git clone <toolrunner repo> harness
+cd harness
+export REPO_ROOT=../corpus
 dotnet run --project ToolRunner -- --verify         # every runner present
 dotnet run --project ToolRunner -- --run            # run them all, compare to dataset.json
 dotnet run --project ToolRunner -- --check          # cross-file consistency audit
 dotnet run --project ToolRunner -- --tool semgrep   # one tool's runner
 ```
+
+`trigger.json` still names each runner as `ToolRunner/Tools/<Name>.cs`; that path is
+relative to the harness repo.
 
 ## What is expected to fire
 

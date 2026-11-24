@@ -27,12 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\OrderKit.Domain\OrderKit.Domain.csproj" />
-    <ProjectReference Include="..\..\src\OrderKit.Contracts\OrderKit.Contracts.csproj" />
-    <ProjectReference Include="..\..\src\Services\OrderKit.Pricing\OrderKit.Pricing.csproj" />
-    <ProjectReference Include="..\..\src\Services\OrderKit.Risk\OrderKit.Risk.csproj" />
-    <ProjectReference Include="..\..\src\Services\OrderKit.Reporting\OrderKit.Reporting.csproj" />
-    <ProjectReference Include="..\..\src\OrderKit.Analysis\OrderKit.Analysis.csproj" />
+    <ProjectReference Include="..\..\src\OrderKit.Core.csproj" />
+    <ProjectReference Include="..\..\src\Services\OrderKit.Services.csproj" />
   </ItemGroup>
 
 </Project>

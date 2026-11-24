@@ -30,15 +30,28 @@ jobs:
       - name: Test with coverage
         run: dotnet test OrderKit.sln --collect:"XPlat Code Coverage" --results-directory reports/tests
 
+      # ToolRunner is not part of this repo (its .csproj would be a 4th project in the
+      # platform's scan). It lives in its own repository and runs against this checkout.
+      - uses: actions/checkout@v4
+        with:
+          repository: VISVANTHA/pure-csharp-toolrunner
+          path: _toolrunner
+
       - name: Cross-file consistency audit
-        run: dotnet run --project ToolRunner -- --check
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+        run: dotnet run --project _toolrunner/ToolRunner -- --check
 
       - name: Verify tool wiring
-        run: dotnet run --project ToolRunner -- --verify
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+        run: dotnet run --project _toolrunner/ToolRunner -- --verify
 
       - name: Run every wired tool
         continue-on-error: true
-        run: dotnet run --project ToolRunner -- --run
+        env:
+          REPO_ROOT: ${{ github.workspace }}
+        run: dotnet run --project _toolrunner/ToolRunner -- --run
 
       - name: Write CI results index
         if: always()

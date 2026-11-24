@@ -22,3 +22,10 @@ Advisory counts are **not** recorded here. They must be read live from the NuGet
 metadata at evaluation time; this host cannot reach it, and a recalled advisory
 count is exactly the kind of researched-looking claim this corpus was built to
 distrust.
+
+## Where the pins are referenced
+
+The versions are central, in `Directory.Packages.props`. `OrderKit.Core`
+(`src/OrderKit.Core.csproj`) and `OrderKit.Services` (`src/Services/OrderKit.Services.csproj`)
+each carry all five `PackageReference`s, as the six former projects did. The
+guard in `src/OrderKit.Contracts/Platform/Integrations.cs` is unchanged.

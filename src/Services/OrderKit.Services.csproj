@@ -1,12 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- OrderKit.Services = the former Pricing + Risk + Reporting projects. Their
+       folders, namespaces and .cs files are unchanged. -->
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <AssemblyName>OrderKit.Risk</AssemblyName>
-    <RootNamespace>OrderKit.Risk</RootNamespace>
+    <AssemblyName>OrderKit.Services</AssemblyName>
+    <RootNamespace>OrderKit</RootNamespace>
     <!-- LangVersion is deliberately NOT set. It defaults from the TargetFramework,
          which is what makes the family axis one number instead of two. -->
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- One AssemblyInfo.cs compiles; the other two stay on disk (CS0579). -->
+    <Compile Remove="OrderKit.Risk/Properties/AssemblyInfo.cs" />
+    <Compile Remove="OrderKit.Reporting/Properties/AssemblyInfo.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" />
@@ -17,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\OrderKit.Domain\OrderKit.Domain.csproj" />
+    <ProjectReference Include="..\OrderKit.Core.csproj" />
   </ItemGroup>
 
 </Project>

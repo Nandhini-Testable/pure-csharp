@@ -8,7 +8,7 @@
   "runner": "ToolRunner/Tools/Stryker.cs",
   "expects": {
     "exit_code": 0,
-    "reason": "Stryker.NET supports this SDK-style net8.0 solution. It runs in solution mode (the test project references five projects) and reports a mutation score. It comes from NuGet; where NuGet is refused it exits 4 instead. Also: the sheet makes it primary for 16 Data Flow metrics, which it cannot compute -- see roslyn-dataflow."
+    "reason": "Stryker.NET supports this SDK-style net8.0 solution. It runs in solution mode (the test project references OrderKit.Core and OrderKit.Services) and reports a mutation score. It comes from NuGet; where NuGet is refused it exits 4 instead. Also: the sheet makes it primary for 16 Data Flow metrics, which it cannot compute -- see roslyn-dataflow."
   },
   "metrics": {
     "primary_for": 23,

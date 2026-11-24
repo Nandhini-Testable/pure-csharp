@@ -2,3 +2,5 @@
 # on disk). C# counterpart of the Python corpus's python-scan-targets.txt.
 src/OrderKit.Analysis
 src/Services/OrderKit.Reporting
+# Paths are folders of OrderKit.Core (Analysis) and OrderKit.Services (Reporting);
+# the folders did not move when the projects were merged.

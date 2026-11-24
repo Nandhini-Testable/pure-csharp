@@ -7,6 +7,8 @@ Tool Invalid
 tool github test data
 tool clean (synthetic
 tool invalid (synthetic
+# ToolRunner now lives in its own repo, but earlier commits here still touched
+# ToolRunner/ paths, and git history is not rewritten, so the excludes stay.
 /ToolRunner/
 ToolRunner/
 /reports/

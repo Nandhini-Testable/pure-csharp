@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- OrderKit.Core = the former Domain + Contracts + Analysis projects. Their
+       folders, namespaces and .cs files are unchanged; they are compiled by
+       default globbing from this directory. Services/ belongs to
+       OrderKit.Services and is excluded here. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>OrderKit.Core</AssemblyName>
+    <RootNamespace>OrderKit</RootNamespace>
+    <!-- LangVersion is deliberately NOT set. It defaults from the TargetFramework,
+         which is what makes the family axis one number instead of two. -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services/**" />
+    <!-- Domain and Contracts each keep their own Properties/AssemblyInfo.cs on
+         disk; compiling both would declare the same attributes twice (CS0579). -->
+    <Compile Remove="OrderKit.Contracts/Properties/AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="System.Net.Http" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" />
+    <PackageReference Include="System.Text.RegularExpressions" />
+    <PackageReference Include="BouncyCastle" />
+  </ItemGroup>
+
+</Project>

@@ -671,21 +671,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "orderkit.analysis": {
-        "type": "Project"
-      },
-      "orderkit.contracts": {
-        "type": "Project",
-        "dependencies": {
-          "BouncyCastle": "[1.8.1, )",
-          "Microsoft.AspNet.Mvc": "[5.2.3, )",
-          "Newtonsoft.Json": "[9.0.1, )",
-          "OrderKit.Domain": "[1.0.0, )",
-          "System.Net.Http": "[4.3.0, )",
-          "System.Text.RegularExpressions": "[4.3.0, )"
-        }
-      },
-      "orderkit.domain": {
+      "orderkit.core": {
         "type": "Project",
         "dependencies": {
           "BouncyCastle": "[1.8.1, )",
@@ -695,35 +681,13 @@
           "System.Text.RegularExpressions": "[4.3.0, )"
         }
       },
-      "orderkit.pricing": {
+      "orderkit.services": {
         "type": "Project",
         "dependencies": {
           "BouncyCastle": "[1.8.1, )",
           "Microsoft.AspNet.Mvc": "[5.2.3, )",
           "Newtonsoft.Json": "[9.0.1, )",
-          "OrderKit.Domain": "[1.0.0, )",
-          "System.Net.Http": "[4.3.0, )",
-          "System.Text.RegularExpressions": "[4.3.0, )"
-        }
-      },
-      "orderkit.reporting": {
-        "type": "Project",
-        "dependencies": {
-          "BouncyCastle": "[1.8.1, )",
-          "Microsoft.AspNet.Mvc": "[5.2.3, )",
-          "Newtonsoft.Json": "[9.0.1, )",
-          "OrderKit.Domain": "[1.0.0, )",
-          "System.Net.Http": "[4.3.0, )",
-          "System.Text.RegularExpressions": "[4.3.0, )"
-        }
-      },
-      "orderkit.risk": {
-        "type": "Project",
-        "dependencies": {
-          "BouncyCastle": "[1.8.1, )",
-          "Microsoft.AspNet.Mvc": "[5.2.3, )",
-          "Newtonsoft.Json": "[9.0.1, )",
-          "OrderKit.Domain": "[1.0.0, )",
+          "OrderKit.Core": "[1.0.0, )",
           "System.Net.Http": "[4.3.0, )",
           "System.Text.RegularExpressions": "[4.3.0, )"
         }

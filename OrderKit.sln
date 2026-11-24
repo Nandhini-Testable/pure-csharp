@@ -1,57 +1,42 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Domain", "src\OrderKit.Domain\OrderKit.Domain.csproj", "{04F85DEF-749D-547D-B999-6E36B341B85F}"
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Core", "src\OrderKit.Core.csproj", "{A6A614FB-30E4-4C9C-9EF9-7DA098C293FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Contracts", "src\OrderKit.Contracts\OrderKit.Contracts.csproj", "{D596BE75-051D-E197-1CE5-653AF085D6A2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08A5E4BF-4964-4625-A7DC-4128D77099C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Pricing", "src\Services\OrderKit.Pricing\OrderKit.Pricing.csproj", "{02BCD1F9-0452-A747-5A8B-1BB7DACBBEDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Services", "src\Services\OrderKit.Services.csproj", "{A8C9E6BA-B3C3-487D-9557-0B4B73AC358C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Risk", "src\Services\OrderKit.Risk\OrderKit.Risk.csproj", "{DCDFF5F1-9C55-43CC-0D01-77E97FEA1A69}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8DB9D8F7-273A-4696-80F6-08CAA1CB01CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Reporting", "src\Services\OrderKit.Reporting\OrderKit.Reporting.csproj", "{33E17DE9-52AC-14AD-7145-D7A9773335D9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Tests", "tests\OrderKit.Tests\OrderKit.Tests.csproj", "{D7993E2A-0038-2F0F-26BD-E136606FE576}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BC9F7F54-0245-4FD8-A50B-708F783C5157}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Analysis", "src\OrderKit.Analysis\OrderKit.Analysis.csproj", "{2D19A74E-06A4-49A9-AA05-960EF3611E6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderKit.Tests", "tests\OrderKit.Tests\OrderKit.Tests.csproj", "{05031CD0-F4C1-4F8E-8F3A-21CB6877E5D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{04F85DEF-749D-547D-B999-6E36B341B85F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04F85DEF-749D-547D-B999-6E36B341B85F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04F85DEF-749D-547D-B999-6E36B341B85F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04F85DEF-749D-547D-B999-6E36B341B85F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D596BE75-051D-E197-1CE5-653AF085D6A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D596BE75-051D-E197-1CE5-653AF085D6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D596BE75-051D-E197-1CE5-653AF085D6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D596BE75-051D-E197-1CE5-653AF085D6A2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02BCD1F9-0452-A747-5A8B-1BB7DACBBEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02BCD1F9-0452-A747-5A8B-1BB7DACBBEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02BCD1F9-0452-A747-5A8B-1BB7DACBBEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02BCD1F9-0452-A747-5A8B-1BB7DACBBEDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCDFF5F1-9C55-43CC-0D01-77E97FEA1A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCDFF5F1-9C55-43CC-0D01-77E97FEA1A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCDFF5F1-9C55-43CC-0D01-77E97FEA1A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCDFF5F1-9C55-43CC-0D01-77E97FEA1A69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33E17DE9-52AC-14AD-7145-D7A9773335D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33E17DE9-52AC-14AD-7145-D7A9773335D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33E17DE9-52AC-14AD-7145-D7A9773335D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33E17DE9-52AC-14AD-7145-D7A9773335D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7993E2A-0038-2F0F-26BD-E136606FE576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7993E2A-0038-2F0F-26BD-E136606FE576}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7993E2A-0038-2F0F-26BD-E136606FE576}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7993E2A-0038-2F0F-26BD-E136606FE576}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D19A74E-06A4-49A9-AA05-960EF3611E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D19A74E-06A4-49A9-AA05-960EF3611E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D19A74E-06A4-49A9-AA05-960EF3611E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D19A74E-06A4-49A9-AA05-960EF3611E6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A614FB-30E4-4C9C-9EF9-7DA098C293FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A614FB-30E4-4C9C-9EF9-7DA098C293FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A614FB-30E4-4C9C-9EF9-7DA098C293FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A614FB-30E4-4C9C-9EF9-7DA098C293FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8C9E6BA-B3C3-487D-9557-0B4B73AC358C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8C9E6BA-B3C3-487D-9557-0B4B73AC358C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8C9E6BA-B3C3-487D-9557-0B4B73AC358C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8C9E6BA-B3C3-487D-9557-0B4B73AC358C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05031CD0-F4C1-4F8E-8F3A-21CB6877E5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05031CD0-F4C1-4F8E-8F3A-21CB6877E5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05031CD0-F4C1-4F8E-8F3A-21CB6877E5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05031CD0-F4C1-4F8E-8F3A-21CB6877E5D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2D19A74E-06A4-49A9-AA05-960EF3611E6E} = {BC9F7F54-0245-4FD8-A50B-708F783C5157}
+		{A8C9E6BA-B3C3-487D-9557-0B4B73AC358C} = {08A5E4BF-4964-4625-A7DC-4128D77099C0}
+		{05031CD0-F4C1-4F8E-8F3A-21CB6877E5D6} = {8DB9D8F7-273A-4696-80F6-08CAA1CB01CB}
 	EndGlobalSection
 EndGlobal
